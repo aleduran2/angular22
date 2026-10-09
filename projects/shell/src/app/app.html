@@ -1,0 +1,28 @@
+<header class="topbar">
+  <a class="brand" routerLink="/">NG22 Shop</a>
+
+  <nav aria-label="Principal">
+    <a routerLink="/catalogo" routerLinkActive="active">Catálogo</a>
+    <a routerLink="/carrito" routerLinkActive="active">
+      Carrito
+      @if (cart.count(); as count) {
+        <span class="badge" data-testid="cart-count">{{ count }}</span>
+      }
+    </a>
+  </nav>
+
+  <div class="session">
+    @if (auth.user(); as user) {
+      <span>Hola, {{ user.name }}</span>
+      <button type="button" class="btn" (click)="logout()">Salir</button>
+    } @else {
+      <a class="btn" routerLink="/login">Ingresar</a>
+    }
+  </div>
+</header>
+
+<main class="container">
+  <router-outlet />
+</main>
+
+<shop-toast-outlet />

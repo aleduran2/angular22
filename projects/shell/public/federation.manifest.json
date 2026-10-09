@@ -1,0 +1,4 @@
+{
+  "catalogo": "http://localhost:4201/remoteEntry.json",
+  "carrito": "http://localhost:4202/remoteEntry.json"
+}
